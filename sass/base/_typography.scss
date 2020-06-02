@@ -1,0 +1,33 @@
+body {
+  font-family: "Spartan", sans-serif;
+  font-size: 1.8rem;
+  color: $color-dark-2;
+}
+
+.heading-1 {
+  font-size: 6.4rem;
+  font-weight: 300;
+
+  @include respond(tablet-land) {
+    font-size: 5.5rem;
+  }
+}
+
+.heading-2 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.heading-3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.paragraph {
+  line-height: 1.7;
+}
+
+.paragraph-sm {
+  font-size: 1.5rem;
+}

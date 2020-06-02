@@ -1,0 +1,21 @@
+.btn {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  border: 1px solid;
+  padding: 2rem 5rem 1.8rem;
+  font-weight: 600;
+
+  &--dark {
+    color: #fff;
+    background-color: $color-primary-black;
+    border-color: #fff;
+
+    &:hover {
+      background-color: #fff;
+      color: $color-primary-black;
+      border-color: $color-primary-black;
+    }
+  }
+}

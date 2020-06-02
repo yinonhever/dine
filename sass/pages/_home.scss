@@ -1,0 +1,201 @@
+///// INTRO SECTION
+.home-intro {
+  background: url(../images/homepage/hero-bg-desktop.jpg), $color-primary-black;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding: 6.5rem $padding-side-desktop 19rem;
+
+  &__content {
+    color: #fff;
+    margin-top: 12rem;
+    width: 53rem;
+
+    @include respond(tablet-land) {
+      margin-top: 7rem;
+      padding-right: 2rem;
+    }
+  }
+
+  &__text {
+    margin-bottom: 5rem;
+    width: 85%;
+  }
+}
+
+///// FEATURES SECTION
+
+.features {
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 $padding-side-desktop;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 62vw;
+      height: 45vw;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+
+    &--left {
+      &::after {
+        top: 38.5%;
+        left: 0;
+        background-image: url(../images/patterns/pattern-curve-top-right.svg);
+        background-position: right top;
+      }
+    }
+
+    &--right {
+      flex-direction: row-reverse;
+
+      &::after {
+        right: 0;
+        top: 53%;
+        background-image: url(../images/patterns/pattern-curve-top-left.svg);
+        background-position: left top;
+      }
+
+      &::before {
+        content: url(../images/patterns/pattern-lines.svg);
+        position: absolute;
+        right: calc(#{$padding-side-desktop} - 11rem);
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 12rem;
+    }
+  }
+
+  &__content {
+    width: 31vw;
+  }
+
+  &__row:first-child &__img {
+    margin-top: -7rem;
+  }
+
+  &__row:last-child &__img {
+    margin-bottom: -7rem;
+  }
+}
+
+///// HIGHLIGHTS SECTION
+.highlights {
+  width: 100%;
+  height: 1000px;
+  background-color: $color-primary-black;
+  padding: 0 $padding-side-desktop;
+}
+
+///// SLIDER SECTION
+
+.slider {
+  padding: 15rem $padding-side-desktop;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 37vw;
+    height: 30rem;
+    background-image: url(../images/patterns/pattern-curve-top-right.svg);
+    background-size: 100%;
+    background-position: right top;
+    z-index: -1;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    &::before {
+      content: url(../images/patterns/pattern-lines.svg);
+      position: absolute;
+      left: -4rem;
+      top: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__content {
+    width: 31vw;
+    margin-left: 8.5vw;
+    margin-bottom: 6.5rem;
+    display: none;
+    animation: slideLeft .7s ease-out;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .btn {
+    display: inline-block;
+    margin-top: 3.5rem;
+  }
+
+  &__img {
+    display: none;
+    animation: slideRight .7s ease-out;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__tab {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__tab-line {
+    background-color: $color-primary;
+    height: 1px;
+    width: 6.5vw;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s;
+  }
+
+  &__tab-title {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: $color-primary-black;
+    opacity: 0.5;
+    margin-left: 2vw;
+    cursor: pointer;
+    transition: opacity .4s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__tab.active &__tab-title {
+    opacity: 1;
+  }
+
+  &__tab.active &__tab-line {
+    visibility: visible;
+    opacity: 1;
+  }
+}
