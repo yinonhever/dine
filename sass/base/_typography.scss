@@ -1,15 +1,29 @@
 body {
   font-family: "Spartan", sans-serif;
-  font-size: 1.8rem;
   color: $color-dark-2;
+  font-weight: 400;
 }
 
 .heading-1 {
   font-size: 6.4rem;
   font-weight: 300;
+  line-height: 1.125;
+  letter-spacing: -0.8px;
 
   @include respond(tablet-land) {
     font-size: 5.5rem;
+  }
+
+  @include respond(tablet) {
+    font-size: 4.8rem;
+    line-height: 1.333;
+    letter-spacing: -0.6px;
+  }
+
+  @include respond(mobile) {
+    font-size: 3.2rem;
+    line-height: 1.25;
+    letter-spacing: -0.4px;
   }
 }
 
@@ -17,17 +31,44 @@ body {
   font-size: 4rem;
   font-weight: 700;
   line-height: 1.4;
+  letter-spacing: -0.5px;
+
+  @include respond(mobile) {
+    font-size: 3.2rem;
+    line-height: 1.25;
+    letter-spacing: -0.4px;
+  }
 }
 
 .heading-3 {
   font-size: 1.8rem;
   font-weight: 700;
+  line-height: 1.556;
+  letter-spacing: -0.23px;
 }
 
 .paragraph {
-  line-height: 1.7;
+  font-size: 1.8rem;
+  line-height: 1.667;
+  letter-spacing: -0.23px;
+
+  @include respond(mobile) {
+    font-size: 1.5rem;
+    line-height: 1.667;
+    letter-spacing: -0.19px;
+  }
+}
+
+.paragraph-intro {
+  font-weight: 300;
 }
 
 .paragraph-sm {
   font-size: 1.5rem;
+  line-height: 1.867;
+  letter-spacing: -0.19px;
+
+  @include respond(mobile) {
+    line-height: 1.667;
+  }
 }

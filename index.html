@@ -29,7 +29,7 @@
         </a>
         <div class="home-intro__content">
           <h1 class="heading-1 mb-small">Exquisite dining since 1989</h1>
-          <p class="paragraph home-intro__text">
+          <p class="paragraph paragraph-intro home-intro__text">
             Experience our seasonal menu in beautiful country surroundings. Eat
             the freshest produce from the comfort of our farmhouse.
           </p>
@@ -48,7 +48,6 @@
                 images\homepage\enjoyable-place-tablet@2x.jpg 2x
               "
               media="(max-width: 900px)"
-              class="picture features__img"
             />
             <source
               srcset="
@@ -56,7 +55,6 @@
                 images\homepage\enjoyable-place-mobile@2x.jpg 2x
               "
               media="(max-width: 600px)"
-              class="picture features__img"
             />
             <img
               alt="enjoyable-place"
@@ -127,7 +125,122 @@
         </div>
       </section>
 
-      <section class="highlights"></section>
+      <section class="highlights">
+        <img
+          src="images/patterns/pattern-divide.svg"
+          alt="seperator-pattern"
+          class="seperator"
+        />
+        <div class="highlights__container">
+          <div class="highlights__left">
+            <h2 class="heading-2 mb-small">A few highlights from our menu</h2>
+            <p class="paragraph">
+              We cater for all dietary requirements, but here’s a glimpse at
+              some of our diner’s favourites. Our menu is revamped every season.
+            </p>
+          </div>
+          <div class="highlights__right">
+            <div class="highlights__item">
+              <!-- Salmon menu item -->
+              <picture>
+                <source
+                  srcset="
+                    images\homepage\salmon-mobile.jpg    1x,
+                    images\homepage\salmon-mobile@2x.jpg 2x
+                  "
+                  media="(max-width: 600px)"
+                />
+                <img
+                  alt="salmon"
+                  srcset="
+                    images\homepage\salmon-desktop-tablet.jpg    1x,
+                    images\homepage\salmon-desktop-tablet@2x.jpg 2x
+                  "
+                  class="highlights__img"
+                />
+              </picture>
+              <div class="highlights__description">
+                <div class="highlights__title-row">
+                  <div class="highlights__line"></div>
+                  <h3 class="heading-3 highlights__title">
+                    Seared Salmon Fillet
+                  </h3>
+                </div>
+                <p class="paragraph-sm highlights__text">
+                  Our locally sourced salmon served with a refreshing buckwheat
+                  summer salad.
+                </p>
+              </div>
+            </div>
+            
+            <div class="highlights__item">
+              <!-- Beef menu item -->
+              <picture>
+                <source
+                  srcset="
+                    images\homepage\beef-mobile.jpg    1x,
+                    images\homepage\beef-mobile@2x.jpg 2x
+                  "
+                  media="(max-width: 600px)"
+                />
+                <img
+                  alt="beef"
+                  srcset="
+                    images\homepage\beef-desktop-tablet.jpg    1x,
+                    images\homepage\beef-desktop-tablet@2x.jpg 2x
+                  "
+                  class="highlights__img"
+                />
+              </picture>
+              <div class="highlights__description">
+                <div class="highlights__title-row">
+                  <div class="highlights__line"></div>
+                  <h3 class="heading-3 highlights__title">
+                    Rosemary Filet Mignon
+                  </h3>
+                </div>
+                <p class="paragraph-sm highlights__text">
+                  Our prime beef served to your taste with a delicious choice of
+                  seasonal sides.
+                </p>
+              </div>
+            </div>
+            
+            <div class="highlights__item">
+              <!-- Chocolate menu item -->
+              <picture>
+                <source
+                  srcset="
+                    images\homepage\chocolate-mobile.jpg    1x,
+                    images\homepage\chocolate-mobile@2x.jpg 2x
+                  "
+                  media="(max-width: 600px)"
+                />
+                <img
+                  alt="chocolate"
+                  srcset="
+                    images\homepage\chocolate-desktop-tablet.jpg    1x,
+                    images\homepage\chocolate-desktop-tablet@2x.jpg 2x
+                  "
+                  class="highlights__img"
+                />
+              </picture>
+              <div class="highlights__description">
+                <div class="highlights__title-row">
+                  <div class="highlights__line"></div>
+                  <h3 class="heading-3 highlights__title">
+                    Summer Fruit Chocolate Mousse
+                  </h3>
+                </div>
+                <p class="paragraph-sm highlights__text">
+                  Creamy mousse combined with summer fruits and dark chocolate
+                  shavings.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section class="slider">
         <div class="slider__container">
@@ -259,51 +372,7 @@
       </section>
     </main>
 
-    <!-- 
-  
-
-  
-
-  
-
-
-
-  A few highlights from our menu
-
-  We cater for all dietary requirements, but here’s a glimpse at some of our diner’s favourites. 
-  Our menu is revamped every season.
-
-  Seared Salmon Fillet
-  Our locally sourced salmon served with a refreshing buckwheat summer salad.
-
-  Rosemary Filet Mignon
-  Our prime beef served to your taste with a delicious choice of seasonal sides.
-
-  Summer Fruit Chocolate Mousse
-  Creamy mousse combined with summer fruits and dark chocolate shavings.
-
-
-
-  Family Gathering
-  Special Events
-  Social Events
-
-  Family Gathering
-  We love catering for entire families. So please bring everyone along for a special meal with your 
-  loved ones. We’ll provide a memorable experience for all.
-
-  Special Events
-  Whether it’s a romantic dinner or special date you’re celebrating with others we’ll look after you. 
-  We’ll be sure to mark your special date with an unforgettable meal.
-
-  Social Events
-  Are you looking to have a larger social event? No problem! We’re more than happy to cater for big 
-  parties. We’ll work with you to make your event a hit with everyone.
-
-  Book a table
-
-
-
+    <!--
   Ready to make a reservation?
 
   Book a table
@@ -319,6 +388,7 @@
   Sat - Sun: 09:00 AM - 11:30 PM -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jquery.waypoints.min.js"></script>
     <script src="index.js"></script>
   </body>
 </html>

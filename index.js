@@ -1,3 +1,5 @@
+// MANAGING THE SLIDER SECTION
+
 const firstTab = $(".slider__tab:first-child");
 var tabID = firstTab.attr("id");
 var imgID = tabID + "__img";
@@ -18,3 +20,30 @@ $(".slider__tab").click(function () {
     $("#" + imgID).addClass("active");
     $("#" + contentID).addClass("active");
 });
+
+
+// ADDING ANIMATIONS
+
+$(document).ready(function () {
+    $(".features__row--left").waypoint(function () {
+        $(this).children(".features__img").css({
+            animation: "slideRight .7s ease-out",
+            opacity: "1"
+        })
+        $(this).children(".features__content").css({
+            animation: "slideLeft .7s ease-out",
+            opacity: "1"
+        })
+    }, { offset: "50%" })
+
+    $(".features__row--right").waypoint(function () {
+        $(this).children(".features__img").css({
+            animation: "slideLeft .7s ease-out",
+            opacity: "1"
+        })
+        $(this).children(".features__content").css({
+            animation: "slideRight .7s ease-out",
+            opacity: "1"
+        })
+    }, { offset: "50%" })
+})
