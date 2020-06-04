@@ -24,19 +24,46 @@
   <body>
     <main>
       <section class="home-intro">
-        <a href="/">
-          <img src="images/logo.svg" alt="logo" class="logo" />
-        </a>
-        <div class="home-intro__content">
-          <h1 class="heading-1 mb-small">Exquisite dining since 1989</h1>
-          <p class="paragraph home-intro__text">
-            Experience our seasonal menu in beautiful country surroundings. Eat
-            the freshest produce from the comfort of our farmhouse.
-          </p>
+        <picture>
+          <source
+            srcset="
+              images/homepage/hero-bg-tablet.jpg    1x,
+              images/homepage/hero-bg-tablet@2x.jpg 2x
+            "
+            media="(max-width: 1200px)"
+          />
+          <source
+            srcset="
+              images/homepage/hero-bg-mobile.jpg    1x,
+              images/homepage/hero-bg-mobile@2x.jpg 2x
+            "
+            media="(max-width: 600px)"
+          />
+          <img
+            alt="hero-bg"
+            srcset="
+              images/homepage/hero-bg-desktop.jpg    1x,
+              images/homepage/hero-bg-desktop@2x.jpg 2x
+            "
+            class="home-intro__bg"
+          />
+        </picture>
+
+        <div class="home-intro__container">
+          <a href="/">
+            <img src="images/logo.svg" alt="logo" class="logo header__logo" />
+          </a>
+          <div class="home-intro__content">
+            <h1 class="heading-1 mb-small home-intro__heading">
+              <span>Exquisite dining</span> <span>since 1989</span>
+            </h1>
+            <p class="paragraph home-intro__text">
+              Experience our seasonal menu in beautiful country surroundings.
+              Eat the freshest produce from the comfort of our farmhouse.
+            </p>
+          </div>
+          <a href="booking.html" class="btn btn--dark">Book a table</a>
         </div>
-        <a href="booking.html" class="btn btn--dark"
-          ><span>Book a table</span></a
-        >
       </section>
 
       <section class="features">
@@ -44,23 +71,23 @@
           <picture>
             <source
               srcset="
-                images\homepage\enjoyable-place-tablet.jpg    1x,
-                images\homepage\enjoyable-place-tablet@2x.jpg 2x
+                images/homepage/enjoyable-place-tablet.jpg    1x,
+                images/homepage/enjoyable-place-tablet@2x.jpg 2x
               "
-              media="(max-width: 900px)"
+              media="(max-width: 1200px)"
             />
             <source
               srcset="
-                images\homepage\enjoyable-place-mobile.jpg    1x,
-                images\homepage\enjoyable-place-mobile@2x.jpg 2x
+                images/homepage/enjoyable-place-mobile.jpg    1x,
+                images/homepage/enjoyable-place-mobile@2x.jpg 2x
               "
               media="(max-width: 600px)"
             />
             <img
               alt="enjoyable-place"
               srcset="
-                images\homepage\enjoyable-place-desktop.jpg    1x,
-                images\homepage\enjoyable-place-desktop@2x.jpg 2x
+                images/homepage/enjoyable-place-desktop.jpg    1x,
+                images/homepage/enjoyable-place-desktop@2x.jpg 2x
               "
               class="picture features__img"
             />
@@ -86,25 +113,23 @@
           <picture>
             <source
               srcset="
-                images\homepage\locally-sourced-tablet.jpg    1x,
-                images\homepage\locally-sourced-tablet@2x.jpg 2x
+                images/homepage/locally-sourced-tablet.jpg    1x,
+                images/homepage/locally-sourced-tablet@2x.jpg 2x
               "
-              media="(max-width: 900px)"
-              class="picture features__img"
+              media="(max-width: 1200px)"
             />
             <source
               srcset="
-                images\homepage\locally-sourced-mobile.jpg    1x,
-                images\homepage\locally-sourced-mobile@2x.jpg 2x
+                images/homepage/locally-sourced-mobile.jpg    1x,
+                images/homepage/locally-sourced-mobile@2x.jpg 2x
               "
               media="(max-width: 600px)"
-              class="picture features__img"
             />
             <img
               alt="locally-sourced"
               srcset="
-                images\homepage\locally-sourced-desktop.jpg    1x,
-                images\homepage\locally-sourced-desktop@2x.jpg 2x
+                images/homepage/locally-sourced-desktop.jpg    1x,
+                images/homepage/locally-sourced-desktop@2x.jpg 2x
               "
               class="picture features__img"
             />
@@ -145,16 +170,16 @@
               <picture>
                 <source
                   srcset="
-                    images\homepage\salmon-mobile.jpg    1x,
-                    images\homepage\salmon-mobile@2x.jpg 2x
+                    images/homepage/salmon-mobile.jpg    1x,
+                    images/homepage/salmon-mobile@2x.jpg 2x
                   "
                   media="(max-width: 600px)"
                 />
                 <img
                   alt="salmon"
                   srcset="
-                    images\homepage\salmon-desktop-tablet.jpg    1x,
-                    images\homepage\salmon-desktop-tablet@2x.jpg 2x
+                    images/homepage/salmon-desktop-tablet.jpg    1x,
+                    images/homepage/salmon-desktop-tablet@2x.jpg 2x
                   "
                   class="highlights__img"
                 />
@@ -172,22 +197,22 @@
                 </p>
               </div>
             </div>
-            
+
             <div class="highlights__item">
               <!-- Beef menu item -->
               <picture>
                 <source
                   srcset="
-                    images\homepage\beef-mobile.jpg    1x,
-                    images\homepage\beef-mobile@2x.jpg 2x
+                    images/homepage/beef-mobile.jpg    1x,
+                    images/homepage/beef-mobile@2x.jpg 2x
                   "
                   media="(max-width: 600px)"
                 />
                 <img
                   alt="beef"
                   srcset="
-                    images\homepage\beef-desktop-tablet.jpg    1x,
-                    images\homepage\beef-desktop-tablet@2x.jpg 2x
+                    images/homepage/beef-desktop-tablet.jpg    1x,
+                    images/homepage/beef-desktop-tablet@2x.jpg 2x
                   "
                   class="highlights__img"
                 />
@@ -205,22 +230,22 @@
                 </p>
               </div>
             </div>
-            
+
             <div class="highlights__item">
               <!-- Chocolate menu item -->
               <picture>
                 <source
                   srcset="
-                    images\homepage\chocolate-mobile.jpg    1x,
-                    images\homepage\chocolate-mobile@2x.jpg 2x
+                    images/homepage/chocolate-mobile.jpg    1x,
+                    images/homepage/chocolate-mobile@2x.jpg 2x
                   "
                   media="(max-width: 600px)"
                 />
                 <img
                   alt="chocolate"
                   srcset="
-                    images\homepage\chocolate-desktop-tablet.jpg    1x,
-                    images\homepage\chocolate-desktop-tablet@2x.jpg 2x
+                    images/homepage/chocolate-desktop-tablet.jpg    1x,
+                    images/homepage/chocolate-desktop-tablet@2x.jpg 2x
                   "
                   class="highlights__img"
                 />
@@ -248,23 +273,23 @@
           <picture>
             <source
               srcset="
-                images\homepage\family-gathering-tablet.jpg    1x,
-                images\homepage\family-gathering-tablet@2x.jpg 2x
+                images/homepage/family-gathering-tablet.jpg    1x,
+                images/homepage/family-gathering-tablet@2x.jpg 2x
               "
-              media="(max-width: 900px)"
+              media="(max-width: 1200px)"
             />
             <source
               srcset="
-                images\homepage\family-gathering-mobile.jpg    1x,
-                images\homepage\family-gathering-mobile@2x.jpg 2x
+                images/homepage/family-gathering-mobile.jpg    1x,
+                images/homepage/family-gathering-mobile@2x.jpg 2x
               "
               media="(max-width: 600px)"
             />
             <img
               alt="family-gathering"
               srcset="
-                images\homepage\family-gathering-desktop.jpg    1x,
-                images\homepage\family-gathering-desktop@2x.jpg 2x
+                images/homepage/family-gathering-desktop.jpg    1x,
+                images/homepage/family-gathering-desktop@2x.jpg 2x
               "
               class="picture slider__img"
               id="tab1__img"
@@ -275,23 +300,23 @@
           <picture>
             <source
               srcset="
-                images\homepage\special-events-tablet.jpg    1x,
-                images\homepage\special-events-tablet@2x.jpg 2x
+                images/homepage/special-events-tablet.jpg    1x,
+                images/homepage/special-events-tablet@2x.jpg 2x
               "
-              media="(max-width: 900px)"
+              media="(max-width: 1200px)"
             />
             <source
               srcset="
-                images\homepage\special-events-mobile.jpg    1x,
-                images\homepage\special-events-mobile@2x.jpg 2x
+                images/homepage/special-events-mobile.jpg    1x,
+                images/homepage/special-events-mobile@2x.jpg 2x
               "
               media="(max-width: 600px)"
             />
             <img
               alt="special-events"
               srcset="
-                images\homepage\special-events-desktop.jpg    1x,
-                images\homepage\special-events-desktop@2x.jpg 2x
+                images/homepage/special-events-desktop.jpg    1x,
+                images/homepage/special-events-desktop@2x.jpg 2x
               "
               class="picture slider__img"
               id="tab2__img"
@@ -302,23 +327,23 @@
           <picture>
             <source
               srcset="
-                images\homepage\social-events-tablet.jpg    1x,
-                images\homepage\social-events-tablet@2x.jpg 2x
+                images/homepage/social-events-tablet.jpg    1x,
+                images/homepage/social-events-tablet@2x.jpg 2x
               "
-              media="(max-width: 900px)"
+              media="(max-width: 1200px)"
             />
             <source
               srcset="
-                images\homepage\social-events-mobile.jpg    1x,
-                images\homepage\social-events-mobile@2x.jpg 2x
+                images/homepage/social-events-mobile.jpg    1x,
+                images/homepage/social-events-mobile@2x.jpg 2x
               "
               media="(max-width: 600px)"
             />
             <img
               alt="social-events"
               srcset="
-                images\homepage\social-events-desktop.jpg    1x,
-                images\homepage\social-events-desktop@2x.jpg 2x
+                images/homepage/social-events-desktop.jpg    1x,
+                images/homepage/social-events-desktop@2x.jpg 2x
               "
               class="picture slider__img"
               id="tab3__img"
@@ -370,22 +395,53 @@
           </div>
         </div>
       </section>
+
+      <section class="cta">
+        <picture>
+          <source
+            srcset="
+              images/homepage/ready-bg-tablet.jpg    1x,
+              images/homepage/ready-bg-tablet@2x.jpg 2x
+            "
+            media="(max-width: 1200px)"
+          />
+          <source
+            srcset="
+              images/homepage/ready-bg-mobile.jpg    1x,
+              images/homepage/ready-bg-mobile@2x.jpg 2x
+            "
+            media="(max-width: 600px)"
+          />
+          <img
+            alt="ready-bg"
+            srcset="
+              images/homepage/ready-bg-desktop.jpg    1x,
+              images/homepage/ready-bg-desktop@2x.jpg 2x
+            "
+            class="cta__bg"
+          />
+        </picture>
+
+        <div class="cta__container">
+          <h2 class="heading-2 cta__text">Ready to make a reservation?</h2>
+          <a href="booking.html" class="btn btn--light">Book a table</a>
+        </div>
+      </section>
     </main>
 
-    <!--
-  Ready to make a reservation?
-
-  Book a table
-
-
-
-  Marthwaite, Sedbergh
-  Cumbria
-  +00 44 123 4567
-
-  Open Times
-  Mon - Fri: 09:00 AM - 10:00 PM
-  Sat - Sun: 09:00 AM - 11:30 PM -->
+    <footer class="footer">
+      <img src="images/logo.svg" alt="logo" class="logo footer__logo" />
+      <div class="footer__column">
+        <p class="footer__text">Marthwaite, Sedbergh</p>
+        <p class="footer__text">Cumbria</p>
+        <p class="footer__text">+00 44 123 4567</p>
+      </div>
+      <div class="footer__column">
+        <p class="footer__text">Open Times</p>
+        <p class="footer__text">Mon - Fri: 09:00 AM - 10:00 PM</p>
+        <p class="footer__text">Sat - Sun: 09:00 AM - 11:30 PM</p>
+      </div>
+    </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="jquery.waypoints.min.js"></script>

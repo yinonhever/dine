@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  align-items: flex-start;
+  background-color: $color-primary-black;
+  color: #fff;
+  padding: 7.8rem $padding-side-desktop;
+  margin-top: -4px;
+
+  &__logo {
+    margin-right: 13.5vw;
+  }
+
+  &__column:not(:last-child) {
+    margin-right: 8.6vw;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 2;
+  }
+}

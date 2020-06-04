@@ -3,20 +3,28 @@
   text-transform: uppercase;
   font-size: 1.4rem;
   letter-spacing: 2px;
-  border: 1px solid;
+  color: #fff;
+  border: 1px solid #fff;
   padding: 2rem 5rem 1.8rem;
-  font-weight: 500;
-  transition: all .6s;
+  font-weight: 600;
+  transition: all 0.6s;
 
   &--dark {
-    color: #fff;
     background-color: $color-primary-black;
-    border-color: #fff;
 
     &:hover {
       background-color: #fff;
       color: $color-primary-black;
       border-color: $color-primary-black;
+    }
+  }
+
+  &--light {
+    background-color: transparent;
+
+    &:hover {
+      background-color: #fff;
+      color: $color-primary-black;
     }
   }
 }

@@ -1,29 +1,67 @@
 ///// INTRO SECTION
 .home-intro {
-  background: url(../images/homepage/hero-bg-desktop.jpg), $color-primary-black;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  padding: 6.5rem $padding-side-desktop 20rem;
+  position: relative;
+
+  @include respond(tablet) {
+    text-align: center;
+    background-color: $color-primary-black;
+    height: 99.2rem;
+  }
+
+  &__bg {
+    width: 100%;
+
+    @include respond(tablet) {
+      max-width: 76.8rem;
+    }
+  }
+
+  &__container {
+    position: absolute;
+    top: 6.5rem;
+    left: $padding-side-desktop;
+
+    @include respond(tablet) {
+      top: 39rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
 
   &__content {
-    color: #fff;
-    margin-top: 12rem;
     width: 53rem;
+    color: #fff;
+    margin: 12rem 0 5rem;
 
-    @include respond(tablet-land) {
-      margin-top: 7rem;
-      padding-right: 2rem;
+    @media only screen and (max-width: 1250px) {
+      margin-top: 8rem;
+    }
+
+    @include respond(tablet) {
+      width: 74.8vw;
+      max-width: 60rem;
+      margin-top: 3.2rem;
+    }
+  }
+
+  &__heading {
+    @include respond(tablet) {
+      span {
+        display: block;
+      }
     }
   }
 
   &__text {
-    margin-bottom: 5rem;
     width: 85%;
+
+    @include respond(tablet) {
+      width: 100%;
+    }
   }
 }
 
 ///// FEATURES SECTION
-
 .features {
   &__row {
     display: flex;
@@ -89,7 +127,6 @@
 }
 
 ///// HIGHLIGHTS SECTION
-
 .highlights {
   background-color: $color-primary-black;
   color: #fff;
@@ -112,7 +149,7 @@
     display: flex;
     align-items: center;
     padding: 2.6rem 0;
-    
+
     &:first-child {
       padding-top: 0;
     }
@@ -218,13 +255,10 @@
     height: 1px;
     width: 6.5vw;
     visibility: hidden;
-    opacity: 0;
-    transition: all 1s;
   }
 
   &__tab.active &__tab-line {
     visibility: visible;
-    opacity: 1;
   }
 
   &__tab-title {
@@ -245,5 +279,26 @@
 
   &__tab.active &__tab-title {
     opacity: 1;
+  }
+}
+
+///// CTA SECTION
+.cta {
+  position: relative;
+
+  &__bg {
+    width: 100%;
+  }
+
+  &__container {
+    position: absolute;
+    left: $padding-side-desktop;
+    right: $padding-side-desktop;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
   }
 }
