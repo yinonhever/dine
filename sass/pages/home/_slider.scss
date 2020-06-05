@@ -5,11 +5,11 @@
 
   @include respond(tablet) {
     padding: 11rem $padding-side-tablet-sm;
+    overflow: hidden;
   }
 
   @include respond(mobile) {
     padding: 8rem $padding-side-mobile 11rem;
-    overflow: hidden;
   }
 
   &::before {

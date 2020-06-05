@@ -437,11 +437,11 @@ body {
   position: relative; }
   @media only screen and (max-width: 1200px) {
     .slider {
-      padding: 11rem 5.1vw; } }
+      padding: 11rem 5.1vw;
+      overflow: hidden; } }
   @media only screen and (max-width: 700px) {
     .slider {
-      padding: 8rem 6.4vw 11rem;
-      overflow: hidden; } }
+      padding: 8rem 6.4vw 11rem; } }
   .slider::before {
     content: "";
     position: absolute;
