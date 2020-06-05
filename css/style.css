@@ -440,7 +440,8 @@ body {
       padding: 11rem 5.1vw; } }
   @media only screen and (max-width: 700px) {
     .slider {
-      padding: 8rem 6.4vw 11rem; } }
+      padding: 8rem 6.4vw 11rem;
+      overflow: hidden; } }
   .slider::before {
     content: "";
     position: absolute;
