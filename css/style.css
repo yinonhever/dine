@@ -468,17 +468,19 @@ body {
       .slider__container {
         flex-direction: column;
         text-align: center; } }
-    .slider__container::before {
+  .slider__img-container {
+    position: relative; }
+    .slider__img-container::before {
       content: url(../images/patterns/pattern-lines.svg);
       position: absolute;
       left: -4rem;
       top: 0;
       transform: translateY(-50%); }
       @media only screen and (max-width: 1200px) {
-        .slider__container::before {
-          left: 0; } }
+        .slider__img-container::before {
+          left: -5rem; } }
       @media only screen and (max-width: 700px) {
-        .slider__container::before {
+        .slider__img-container::before {
           display: none; } }
   @media only screen and (max-width: 1200px) {
     .slider__right {

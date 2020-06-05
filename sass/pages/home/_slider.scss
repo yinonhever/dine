@@ -43,6 +43,10 @@
       flex-direction: column;
       text-align: center;
     }
+  }
+
+  &__img-container {
+    position: relative;
 
     &::before {
       content: url(../images/patterns/pattern-lines.svg);
@@ -52,7 +56,7 @@
       transform: translateY(-50%);
 
       @include respond(tablet) {
-        left: 0;
+        left: -5rem;
       }
 
       @include respond(mobile) {
