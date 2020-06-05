@@ -1,3 +1,11 @@
 .seperator {
   margin-bottom: 5.5rem;
+
+  @include respond(tablet) {
+    margin-bottom: 4.3rem;
+  }
+
+  @include respond(mobile) {
+    margin-bottom: 4rem;
+  }
 }

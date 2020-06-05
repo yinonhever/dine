@@ -1,0 +1,138 @@
+/* FEATURES SECTION */
+.features {
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 $padding-side-desktop;
+    position: relative;
+
+    @include respond(tablet) {
+      padding: 0 $padding-side-tablet-lg;
+      flex-direction: column !important;
+      text-align: center;
+    }
+
+    @include respond(mobile) {
+      padding: 0 $padding-side-mobile;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 62vw;
+      height: 45vw;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      z-index: -1;
+
+      @include respond(tablet) {
+        width: 50vw;
+        height: 32rem;
+        background-image: none !important;
+        background-color: rgba($color-grey, 0.08);
+      }
+
+      @include respond(mobile) {
+        display: none;
+      }
+    }
+
+    &--left {
+      &::after {
+        top: 38.5%;
+        left: 0;
+        background-image: url(../images/patterns/pattern-curve-top-right.svg);
+        background-position: right top;
+
+        @include respond(tablet) {
+          top: 10rem;
+        }
+      }
+    }
+
+    &--right {
+      flex-direction: row-reverse;
+
+      &::after {
+        right: 0;
+        bottom: 0;
+        top: 53%;
+        background-image: url(../images/patterns/pattern-curve-top-left.svg);
+        background-position: left top;
+
+        @include respond(tablet) {
+          bottom: 0;
+          top: none;
+          border-top-left-radius: 100px;
+          transform: translateY(6rem);
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      padding-bottom: 12rem;
+    }
+
+    @include respond(tablet) {
+      &:last-child {
+        padding-bottom: 12rem;
+      }
+    }
+
+    @include respond(mobile) {
+      padding-bottom: 8rem !important;
+    }
+  }
+
+  &__content {
+    width: 31vw;
+
+    @include respond(tablet) {
+      width: 100%;
+      max-width: 46rem;
+    }
+
+    @include respond(mobile) {
+      max-width: 32.7rem;
+    }
+  }
+
+  &__row:first-child &__img {
+    margin-top: -7rem;
+
+    @include respond(tablet) {
+      margin-top: -9rem;
+    }
+
+    @include respond(mobile) {
+      margin-top: -6rem;
+    }
+  }
+
+  &__row:last-child &__img {
+    margin-bottom: -7rem;
+  }
+
+  &__img-container {
+    position: relative;
+  }
+
+  &__row--right &__img-container::before {
+    content: url(../images/patterns/pattern-lines.svg);
+    position: absolute;
+    right: -11rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include respond(tablet) {
+      top: 50%;
+      right: -6rem;
+      transform: none;
+    }
+
+    @include respond(mobile) {
+      display: none;
+    }
+  }
+}

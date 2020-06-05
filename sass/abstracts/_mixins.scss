@@ -6,13 +6,7 @@
   }
 
   @if $breakpoint == mobile {
-    @media only screen and (max-width: 600px) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == high-res {
-    @media only screen and (min-resolution: 192dpi) {
+    @media only screen and (max-width: 700px) {
       @content;
     }
   }

@@ -9,7 +9,8 @@ $("#" + tabID).addClass("active");
 $("#" + imgID).addClass("active");
 $("#" + contentID).addClass("active");
 
-$(".slider__tab").click(function () {
+$(".slider__tab").click(function (event) {
+    event.preventDefault();
     $(".slider__tab, .slider__img, .slider__content").removeClass("active");
 
     tabID = $(this).attr("id");

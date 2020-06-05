@@ -1,0 +1,39 @@
+/* CTA SECTION */
+.cta {
+  position: relative;
+
+  &__bg {
+    width: 100%;
+  }
+
+  &__container {
+    position: absolute;
+    left: $padding-side-desktop;
+    right: $padding-side-desktop;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+
+    @include respond(tablet) {
+      left: $padding-side-tablet-sm;
+      right: $padding-side-tablet-sm;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    @include respond(mobile) {
+      left: $padding-side-mobile;
+      right: $padding-side-mobile;
+    }
+  }
+
+  &__text {
+    @include respond(tablet) {
+      margin-bottom: 2rem;
+    }
+  }
+}

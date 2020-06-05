@@ -1,0 +1,194 @@
+/* SLIDER SECTION */
+.slider {
+  padding: 15rem $padding-side-desktop;
+  position: relative;
+
+  @include respond(tablet) {
+    padding: 11rem $padding-side-tablet-sm;
+  }
+
+  @include respond(mobile) {
+    padding: 8rem $padding-side-mobile 11rem;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 37vw;
+    height: 30rem;
+    background-color: rgba($color-grey, 0.08);
+    border-top-right-radius: 100px;
+    z-index: -1;
+
+    @include respond(tablet) {
+      width: 50vw;
+      height: 32rem;
+    }
+
+    @include respond(mobile) {
+      display: none;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    @include respond(tablet) {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    &::before {
+      content: url(../images/patterns/pattern-lines.svg);
+      position: absolute;
+      left: -4rem;
+      top: 0;
+      transform: translateY(-50%);
+
+      @include respond(tablet) {
+        left: 0;
+      }
+
+      @include respond(mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__right {
+    @include respond(tablet) {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+
+  &__content {
+    display: none;
+    width: 31vw;
+    margin-left: 8.5vw;
+    margin-bottom: 6.5rem;
+    animation: slideLeft 0.7s ease-out;
+
+    &.active {
+      display: block;
+    }
+
+    @include respond(tablet) {
+      width: 100%;
+      max-width: 46rem;
+      margin: 5rem auto 0;
+    }
+
+    @include respond(mobile) {
+      max-width: 32.7rem;
+      margin-top: 4rem;
+    }
+  }
+
+  &__btn {
+    display: inline-block;
+    margin-top: 3.5rem;
+
+    border-color: $color-primary-black;
+  }
+
+  &__img {
+    display: none;
+    animation: slideRight 0.7s ease-out;
+
+    &.active {
+      display: block;
+    }
+
+    @include respond(tablet) {
+      margin-bottom: 5rem !important;
+    }
+  }
+
+  &__tabs {
+    @include respond(tablet) {
+      display: flex;
+      justify-content: space-between;
+      width: 90vw;
+      max-width: 69rem;
+      padding: 0 2rem;
+      margin: auto;
+    }
+
+    @include respond(mobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__tab {
+    display: flex;
+    align-items: center;
+
+    @include respond(tablet) {
+      flex-direction: column-reverse;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+
+      @include respond(tablet) {
+        margin-bottom: 0;
+      }
+
+      @include respond(mobile) {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  &__tab-line {
+    background-color: $color-primary;
+    height: 1px;
+    width: 6.5vw;
+    visibility: hidden;
+
+    @include respond(tablet) {
+      margin-top: 0.5rem;
+      width: 4.8rem;
+    }
+
+    @include respond(mobile) {
+      margin-top: 0;
+    }
+  }
+
+  &__tab.active &__tab-line {
+    visibility: visible;
+  }
+
+  &__tab-title {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: $color-primary-black;
+    opacity: 0.5;
+    margin-left: 2vw;
+    cursor: pointer;
+    transition: opacity 0.4s;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    @include respond(tablet) {
+      letter-spacing: 2px;
+      line-height: 2;
+    }
+  }
+
+  &__tab.active &__tab-title {
+    opacity: 1;
+  }
+}

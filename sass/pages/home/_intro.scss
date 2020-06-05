@@ -1,0 +1,94 @@
+/* INTRO SECTION */
+.home-intro {
+  position: relative;
+
+  @include respond(tablet) {
+    text-align: center;
+    background-color: $color-primary-black;
+    height: 99.2rem;
+  }
+
+  @include respond(mobile) {
+    height: 74.8rem;
+
+    .logo {
+      width: 8.3rem;
+    }
+  }
+
+  &__bg {
+    width: 100%;
+
+    @include respond(tablet) {
+      max-width: 76.8rem;
+
+      @include respond(mobile) {
+        max-width: 37.5rem;
+      }
+    }
+  }
+
+  &__container {
+    position: absolute;
+    top: 6.5rem;
+    left: $padding-side-desktop;
+
+    @include respond(tablet) {
+      top: 39rem;
+      left: $padding-side-tablet-lg;
+      right: $padding-side-tablet-lg;
+    }
+
+    @media only screen and (max-width: 725px) {
+      top: 35rem;
+    }
+
+    @include respond(mobile) {
+      top: 23rem;
+      left: $padding-side-mobile;
+      right: $padding-side-mobile;
+    }
+  }
+
+  &__content {
+    width: 53rem;
+    color: #fff;
+    margin: 12rem 0 5rem;
+
+    @media only screen and (max-width: 1250px) {
+      margin-top: 8rem;
+    }
+
+    @include respond(tablet) {
+      width: 100%;
+      max-width: 57rem;
+      margin: 3.2rem auto 6rem;
+    }
+
+    @include respond(mobile) {
+      max-width: 32.7rem;
+    }
+  }
+
+  &__heading {
+    @include respond(tablet) {
+      margin-bottom: 3.2rem;
+
+      span {
+        display: block;
+      }
+    }
+  }
+
+  &__text {
+    width: 85%;
+
+    @include respond(tablet) {
+      width: 100%;
+    }
+  }
+
+  &__btn:hover {
+    border-color: #fff;
+  }
+}

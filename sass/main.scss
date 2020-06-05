@@ -7,11 +7,16 @@
 @import "base/utilities";
 
 @import "components/button";
-@import "components/logo";
 @import "components/picture";
 @import "components/seperator";
 
 @import "layout/footer";
 
-@import "pages/booking";
-@import "pages/home";
+@import "pages/home/intro";
+@import "pages/home/features";
+@import "pages/home/highlights";
+@import "pages/home/slider";
+@import "pages/home/cta";
+
+@import "pages/booking/intro";
+@import "pages/booking/form";

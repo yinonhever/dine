@@ -6,12 +6,50 @@
   padding: 7.8rem $padding-side-desktop;
   margin-top: -4px;
 
+  @include respond(tablet) {
+    padding: 6.4rem $padding-side-tablet-sm;
+  }
+
+  @include respond(mobile) {
+    flex-direction: column;
+    align-items: center;
+    padding: 8rem $padding-side-mobile;
+  }
+
   &__logo {
     margin-right: 13.5vw;
+
+    @include respond(tablet) {
+      margin-right: 17vw;
+    }
+
+    @include respond(mobile) {
+      width: 10.4rem;
+      margin-right: 0;
+      margin-bottom: 5rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+
+    @include respond(tablet) {
+      flex-direction: column;
+    }
+
+    @include respond(mobile) {
+      align-items: center;
+      text-align: center;
+    }
   }
 
   &__column:not(:last-child) {
     margin-right: 8.6vw;
+
+    @include respond(tablet) {
+      margin-right: 0;
+      margin-bottom: 3.25rem;
+    }
   }
 
   &__text {
