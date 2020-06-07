@@ -155,11 +155,44 @@
                 />
               </div>
 
-              <div class="form__input-container form__input-container--md">
-                <select id="period" class="form__input">
-                  <option value="AM">AM</option>
-                  <option value="PM">PM</option>
-                </select>
+              <div class="form__select-wrapper">
+                <input
+                  type="hidden"
+                  class="form__select-input"
+                  id="period"
+                  aria-label="Period"
+                />
+                <div
+                  class="form__input-container form__input-container--md form__select"
+                  id="period-select"
+                >
+                  <div class="form__input form__select-trigger" id="period-trigger">
+                    <span>AM</span>
+                    <img
+                      class="form__arrow"
+                      src="images/icons/icon-arrow.svg"
+                      alt="arrow"
+                    />
+                  </div>
+                  <div class="form__options">
+                    <div class="form__option selected" data-value="AM">
+                      <img
+                        src="images/icons/icon-check.svg"
+                        alt="check"
+                        class="form__check"
+                      />
+                      <span>AM</span>
+                    </div>
+                    <div class="form__option" data-value="PM">
+                      <img
+                        src="images/icons/icon-check.svg"
+                        alt="check"
+                        class="form__check"
+                      />
+                      <span>PM</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

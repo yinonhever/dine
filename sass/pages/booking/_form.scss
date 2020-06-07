@@ -183,6 +183,87 @@
     }
   }
 
+  &__select {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    cursor: pointer;
+    color: $color-primary-black;
+    font-size: 1.8rem;
+  }
+
+  &__select-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1.6rem;
+    height: 4.5rem;
+    position: relative;
+  }
+
+  &__arrow {
+    transition: all .5s;
+  }
+
+  &__select-trigger:hover &__arrow {
+    opacity: 0.6;
+  }
+
+  &__select.open &__arrow {
+    transform: rotate(180deg);
+  }
+
+  &__options {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 8px);
+    display: flex;
+    flex-direction: column;
+    width: 10.6rem;
+    box-shadow: $bshadow-2;
+    background-color: #fff;
+    z-index: 999;
+    padding: 1.8rem 3rem 1.6rem 1.6rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .75s;
+  }
+
+  &__select.open &__options {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 1.6rem;
+    }
+
+    span {
+      transition: opacity .25s;
+    }
+
+    &:hover span {
+      opacity: 0.5;
+    }
+  }
+
+  &__check {
+    visibility: hidden;
+    opacity: 0;
+    transition: .2s;
+  }
+
+  &__option.selected &__check {
+    visibility: visible;
+    opacity: 1;
+  }
+
   &__operator-row {
     display: flex;
     justify-content: space-between;

@@ -823,6 +823,61 @@ body {
     @media only screen and (max-width: 700px) {
       .form__row .form__input-container:not(:last-child) {
         margin-right: 0; } }
+  .form__select {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    cursor: pointer;
+    color: #111;
+    font-size: 1.8rem; }
+  .form__select-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1.6rem;
+    height: 4.5rem;
+    position: relative; }
+  .form__arrow {
+    transition: all .5s; }
+  .form__select-trigger:hover .form__arrow {
+    opacity: 0.6; }
+  .form__select.open .form__arrow {
+    transform: rotate(180deg); }
+  .form__options {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 8px);
+    display: flex;
+    flex-direction: column;
+    width: 10.6rem;
+    box-shadow: 0 1.5rem 2.5rem 0 rgba(56, 66, 85, 0.25);
+    background-color: #fff;
+    z-index: 999;
+    padding: 1.8rem 3rem 1.6rem 1.6rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .75s; }
+  .form__select.open .form__options {
+    visibility: visible;
+    opacity: 1; }
+  .form__option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; }
+    .form__option:not(:last-child) {
+      margin-bottom: 1.6rem; }
+    .form__option span {
+      transition: opacity .25s; }
+    .form__option:hover span {
+      opacity: 0.5; }
+  .form__check {
+    visibility: hidden;
+    opacity: 0;
+    transition: .2s; }
+  .form__option.selected .form__check {
+    visibility: visible;
+    opacity: 1; }
   .form__operator-row {
     display: flex;
     justify-content: space-between;

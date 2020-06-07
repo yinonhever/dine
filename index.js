@@ -22,6 +22,21 @@ $(".slider__tab").click(function () {
 });
 
 
+// MANAGING THE PERIOD SELECTOR
+
+$(".form__select").on("click", function() {
+    $(this).toggleClass("open");
+})
+
+$(".form__option").on("click", function() {
+    $(".form__option").removeClass("selected");
+    $(this).addClass("selected");
+    const selected = $(this).text();
+    $("#period-trigger span").text(selected);
+    $("#period").val(selected);
+})
+
+
 // MANAGING THE PEOPLE COUNT OPERATOR
 
 var peopleCount = 4;
