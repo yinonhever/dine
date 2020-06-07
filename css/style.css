@@ -772,9 +772,11 @@ body {
       .form__input {
         padding-left: 8px; } }
     .form__input:focus {
+      color: #111 !important;
       border-color: #111 !important;
       cursor: pointer; }
     .form__input.error {
+      color: #b54949;
       border-color: #b54949; }
     .form__input::placeholder {
       font-size: 1.8rem;

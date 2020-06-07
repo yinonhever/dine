@@ -72,7 +72,7 @@ $(".form").on("submit", function (event) {
     const formValid = nameValid && emailValid && dateValid && timeValid;
 
     if (formValid) {
-        $(".form__input").val("");
+        $(".form__input:not(#period)").val("");
     }
 })
 
@@ -127,26 +127,26 @@ function validateEmail(email) {
 
 function validateDate(day, month, year) {
     if (day === "" && month === "" && year === "") {
-        $("#date-label").addClass("error").removeClass("invalid");
+        $("#date-label, #day, #month, #year").addClass("error").removeClass("invalid");
         return false;
     }
     else {
         if (!validateDay(day) || !validateMonth(month) || !validateYear(year)) {
-            $("#date-label").addClass("error").addClass("invalid");
+            $("#date-label, #day, #month, #year").addClass("error").addClass("invalid");
             return false;
         }
         else {
             if (!dayFittingMonth(day, month)) {
-                $("#date-label").addClass("error").addClass("invalid");
+                $("#date-label, #day, #month, #year").addClass("error").addClass("invalid");
                 return false;
             }
             else {
-                if (day === "" || month === "" || year === "") {
-                    $("#date-label").addClass("error").removeClass("invalid");
+                if (day === "" || month === "" || year === "") {     
+                    $("#date-label, #day, #month, #year").addClass("error").removeClass("invalid");
                     return false;
                 }
                 else {
-                    $("#date-label").removeClass("error").removeClass("invalid");
+                    $("#date-label, #day, #month, #year").removeClass("error").removeClass("invalid");
                     return true;
                 }
             }
@@ -202,21 +202,21 @@ function dayFittingMonth(day, month) {
 
 function validateTime(hour, minute) {
     if (hour === "" && minute === "") {
-        $("#time-label").addClass("error").removeClass("invalid");
+        $("#time-label, #hour, #minute").addClass("error").removeClass("invalid");
         return false;
     }
     else {
         if (!validateHour(hour) || !validateMinute(minute)) {
-            $("#time-label").addClass("error").addClass("invalid");
+            $("#time-label, #hour, #minute").addClass("error").addClass("invalid");
             return false;
         }
         else {
             if (hour === "" || minute === "") {
-                $("#time-label").addClass("error").removeClass("invalid");
+                $("#time-label, #hour, #minute").addClass("error").removeClass("invalid");
                 return false;
             }
             else {
-                $("#time-label").removeClass("error").removeClass("invalid");
+                $("#time-label, #hour, #minute").removeClass("error").removeClass("invalid");
                 return true;
             }
         }

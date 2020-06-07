@@ -104,11 +104,13 @@
     }
 
     &:focus {
+      color: $color-primary-black !important;
       border-color: $color-primary-black !important;
       cursor: pointer;
     }
 
     &.error {
+      color: $color-error;
       border-color: $color-error;
     }
 
