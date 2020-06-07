@@ -9,6 +9,12 @@
   font-weight: 600;
   transition: all 0.6s;
 
+  // for the button element
+  cursor: pointer;
+  outline: none;
+  font-family: "Spartan", sans-serif;
+  font-weight: 600;
+
   &--dark {
     background-color: $color-primary-black;
 

@@ -1,0 +1,108 @@
+.booking-container {
+  position: relative;
+
+  &__bg {
+    width: 100%;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 6.5rem;
+    left: $padding-side-desktop;
+
+    @include respond(tablet) {
+      top: 5.6rem;
+      left: $padding-side-tablet-sm;
+    }
+
+    @include respond(mobile) {
+      width: 8.3rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: $padding-side-desktop;
+    right: $padding-side-desktop;
+    top: 42.5%;
+
+    @include respond(tablet) {
+      flex-direction: column;
+      align-items: center;
+      top: 27%;
+    }
+
+    @include respond(mobile) {
+      left: $padding-side-mobile;
+      right: $padding-side-mobile;
+      top: 22%;
+    }
+  }
+
+  &__intro {
+    width: 31vw;
+    color: #fff;
+
+    @include respond(tablet) {
+      width: 100%;
+      max-width: 54rem;
+      text-align: center;
+      margin: 0 auto 6vw;
+    }
+
+    @include respond(mobile) {
+      max-width: 40rem;
+      margin-bottom: 9.1rem;
+    }
+  }
+
+  &__intro-btn {
+    display: none;
+
+    @include respond(mobile) {
+      display: inline-block;
+      margin-top: 2.4rem;
+    }
+  }
+
+  &__bottom-bg {
+    width: 69vw;
+    height: 32rem;
+    background-color: rgba($color-grey, 0.08);
+    border-bottom-right-radius: 100px;
+    margin-top: -3px;
+
+    @include respond(tablet) {
+      opacity: 0; // turning the background into white space on tablet and mobile
+      height: 45rem; 
+
+      @media only screen and (min-width: 900px) {
+        height: 35rem;
+      }
+
+      @media only screen and (min-width: 1050px) {
+        height: 30rem;
+      }
+    }
+
+    @include respond(mobile) {
+      height: 55rem;
+
+      @media only screen and (min-width: 450px) {
+        height: 40rem;
+      }
+
+      @media only screen and (min-width: 500px) {
+        height: 35rem;
+      }
+
+      @media only screen and (min-width: 600px) {
+        height: 20rem;
+      }
+    }
+  }
+}

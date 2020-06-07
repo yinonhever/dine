@@ -99,7 +99,11 @@ body {
   border: 1px solid #fff;
   padding: 2rem 5rem 1.8rem;
   font-weight: 600;
-  transition: all 0.6s; }
+  transition: all 0.6s;
+  cursor: pointer;
+  outline: none;
+  font-family: "Spartan", sans-serif;
+  font-weight: 600; }
   .btn--dark {
     background-color: #111; }
     .btn--dark:hover {
@@ -142,7 +146,8 @@ body {
   margin-top: -4px; }
   @media only screen and (max-width: 1200px) {
     .footer {
-      padding: 6.4rem 5.1vw; } }
+      padding: 6.4rem 5.1vw;
+      margin-top: -5px; } }
   @media only screen and (max-width: 700px) {
     .footer {
       flex-direction: column;
@@ -604,5 +609,219 @@ body {
     .cta__text {
       margin-bottom: 2rem; } }
 
-.booking-intro {
-  background-color: #111; }
+.booking-container {
+  position: relative; }
+  .booking-container__bg {
+    width: 100%; }
+  .booking-container__logo {
+    position: absolute;
+    top: 6.5rem;
+    left: 11vw; }
+    @media only screen and (max-width: 1200px) {
+      .booking-container__logo {
+        top: 5.6rem;
+        left: 5.1vw; } }
+    @media only screen and (max-width: 700px) {
+      .booking-container__logo {
+        width: 8.3rem;
+        left: 50%;
+        transform: translateX(-50%); } }
+  .booking-container__content {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 11vw;
+    right: 11vw;
+    top: 42.5%; }
+    @media only screen and (max-width: 1200px) {
+      .booking-container__content {
+        flex-direction: column;
+        align-items: center;
+        top: 27%; } }
+    @media only screen and (max-width: 700px) {
+      .booking-container__content {
+        left: 6.4vw;
+        right: 6.4vw;
+        top: 22%; } }
+  .booking-container__intro {
+    width: 31vw;
+    color: #fff; }
+    @media only screen and (max-width: 1200px) {
+      .booking-container__intro {
+        width: 100%;
+        max-width: 54rem;
+        text-align: center;
+        margin: 0 auto 6vw; } }
+    @media only screen and (max-width: 700px) {
+      .booking-container__intro {
+        max-width: 40rem;
+        margin-bottom: 9.1rem; } }
+  .booking-container__intro-btn {
+    display: none; }
+    @media only screen and (max-width: 700px) {
+      .booking-container__intro-btn {
+        display: inline-block;
+        margin-top: 2.4rem; } }
+  .booking-container__bottom-bg {
+    width: 69vw;
+    height: 32rem;
+    background-color: rgba(92, 103, 121, 0.08);
+    border-bottom-right-radius: 100px;
+    margin-top: -3px; }
+    @media only screen and (max-width: 1200px) {
+      .booking-container__bottom-bg {
+        opacity: 0;
+        height: 45rem; } }
+  @media only screen and (max-width: 1200px) and (min-width: 900px) {
+    .booking-container__bottom-bg {
+      height: 35rem; } }
+  @media only screen and (max-width: 1200px) and (min-width: 1050px) {
+    .booking-container__bottom-bg {
+      height: 30rem; } }
+    @media only screen and (max-width: 700px) {
+      .booking-container__bottom-bg {
+        height: 55rem; } }
+  @media only screen and (max-width: 700px) and (min-width: 450px) {
+    .booking-container__bottom-bg {
+      height: 40rem; } }
+  @media only screen and (max-width: 700px) and (min-width: 500px) {
+    .booking-container__bottom-bg {
+      height: 35rem; } }
+  @media only screen and (max-width: 700px) and (min-width: 600px) {
+    .booking-container__bottom-bg {
+      height: 20rem; } }
+
+.form {
+  background-color: #fff;
+  width: 37.5vw;
+  min-width: 49rem;
+  max-width: 54rem;
+  padding: 3.3vw;
+  box-shadow: 0 7.5rem 10rem -5rem rgba(56, 66, 85, 0.5);
+  display: flex;
+  flex-direction: column;
+  position: relative; }
+  @media only screen and (min-width: 1500px) {
+    .form {
+      padding: 4.8rem; } }
+  @media only screen and (max-width: 1200px) {
+    .form {
+      width: 100%;
+      padding: 4.8rem;
+      margin: auto; } }
+  @media only screen and (max-width: 700px) {
+    .form {
+      min-width: 0;
+      max-width: 40rem;
+      padding: 3.2rem; } }
+  @media only screen and (max-width: 370px) {
+    .form {
+      padding: 8.5vw; } }
+  .form::after {
+    content: url(../images/patterns/pattern-lines.svg);
+    position: absolute;
+    left: -7rem;
+    bottom: -3rem;
+    z-index: -1; }
+    @media only screen and (max-width: 1200px) {
+      .form::after {
+        display: none; } }
+  .form .error::after {
+    position: absolute;
+    font-size: 1rem;
+    letter-spacing: -0.13px;
+    color: #b54949; }
+  .form__input-container {
+    height: 4.5rem;
+    margin-bottom: 3.5rem;
+    position: relative; }
+    .form__input-container--lg {
+      width: 100%; }
+    .form__input-container--md {
+      width: 9.7rem; }
+      @media only screen and (max-width: 700px) {
+        .form__input-container--md {
+          width: 33.5%; } }
+    .form__input-container--sm {
+      width: 8rem; }
+      @media only screen and (max-width: 700px) {
+        .form__input-container--sm {
+          width: 27.7%; } }
+    .form__input-container.error::after {
+      content: "This field is required";
+      top: 115%;
+      left: 1.6rem; }
+  .form__input {
+    width: 100%;
+    height: 100%;
+    padding: 2px 0 1.6rem 1.7rem;
+    border: none;
+    border-bottom: 1px solid #8e8e8e;
+    font-size: 1.8rem;
+    color: inherit;
+    font-family: inherit;
+    outline: none; }
+    @media only screen and (max-width: 350px) {
+      .form__input {
+        padding-left: 8px; } }
+    .form__input:focus {
+      border-color: #111 !important;
+      cursor: pointer; }
+    .form__input.error {
+      border-color: #b54949; }
+    .form__input::placeholder {
+      font-size: 1.8rem;
+      font-family: "Spartan", sans-serif;
+      color: #111;
+      opacity: 0.5; }
+    .form__input.error::placeholder {
+      color: #b54949; }
+  .form__row {
+    display: flex; }
+    @media only screen and (max-width: 700px) {
+      .form__row {
+        flex-direction: column; } }
+  .form__label {
+    font-size: 1.8rem;
+    color: #111;
+    align-self: flex-start;
+    padding-top: 0.75rem;
+    position: relative; }
+    @media only screen and (max-width: 700px) {
+      .form__label {
+        margin-bottom: 8px; } }
+    .form__label.error::after {
+      content: "This field is incomplete";
+      top: 105%;
+      left: 0;
+      width: 200%; }
+  .form__group {
+    display: flex;
+    margin-left: auto; }
+    @media only screen and (max-width: 700px) {
+      .form__group {
+        justify-content: space-between;
+        margin-left: 0; } }
+  .form__row .form__input-container:not(:last-child) {
+    margin-right: 1.6rem; }
+    @media only screen and (max-width: 700px) {
+      .form__row .form__input-container:not(:last-child) {
+        margin-right: 0; } }
+  .form__operator-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 3rem 1.7rem; }
+  .form__operator {
+    color: #9e7f66;
+    cursor: pointer;
+    transition: opacity 0.4s; }
+    .form__operator:hover {
+      opacity: 0.5; }
+  .form__people-count {
+    color: #151515;
+    font-weight: 700; }
+  .form__btn {
+    border-color: #111;
+    padding-left: 0;
+    padding-right: 0; }

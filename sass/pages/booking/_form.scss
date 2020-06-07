@@ -1,0 +1,191 @@
+.form {
+  background-color: #fff;
+  width: 37.5vw;
+  min-width: 49rem;
+  max-width: 54rem;
+  padding: 3.3vw;
+  box-shadow: $bshadow-1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @media only screen and (min-width: 1500px) {
+    padding: 4.8rem; // Avoid excessive padding on very large screens
+  }
+
+  @include respond(tablet) {
+    width: 100%;
+    padding: 4.8rem;
+    margin: auto;
+  }
+
+  @include respond(mobile) {
+    min-width: 0;
+    max-width: 40rem;
+    padding: 3.2rem;
+  }
+
+  @media only screen and (max-width: 370px) {
+    padding: 8.5vw; // Avoid excessive padding on smaller phones
+  }
+
+  &::after {
+    content: url(../images/patterns/pattern-lines.svg);
+    position: absolute;
+    left: -7rem;
+    bottom: -3rem;
+    z-index: -1;
+
+    @include respond(tablet) {
+      display: none;
+    }
+  }
+
+  & .error::after {
+    position: absolute;
+    font-size: 1rem;
+    letter-spacing: -0.13px;
+    color: $color-error;
+  }
+
+  &__input-container {
+    height: 4.5rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+
+    &--lg {
+      width: 100%;
+    }
+
+    &--md {
+      width: 9.7rem;
+
+      @include respond(mobile) {
+        width: 33.5%;
+      }
+    }
+
+    &--sm {
+      width: 8rem;
+
+      @include respond(mobile) {
+        width: 27.7%
+      }
+    }
+
+    &.error::after {
+      content: "This field is required";
+      top: 115%;
+      left: 1.6rem;
+    }
+  }
+
+  &__input {
+    width: 100%; // Adpating every input to the width and height of its container
+    height: 100%;
+    padding: 2px 0 1.6rem 1.7rem;
+    border: none;
+    border-bottom: 1px solid #8e8e8e;
+    font-size: 1.8rem;
+    color: inherit;
+    font-family: inherit;
+    outline: none;
+
+    @media only screen and (max-width: 350px) {
+      padding-left: 8px;
+    }
+
+    &:focus {
+      border-color: $color-primary-black !important;
+      cursor: pointer;
+    }
+
+    &.error {
+      border-color: $color-error;
+    }
+
+    &::placeholder {
+      font-size: 1.8rem;
+      font-family: "Spartan", sans-serif;
+      color: $color-primary-black;
+      opacity: 0.5;
+    }
+
+    &.error::placeholder {
+      color: $color-error;
+    }
+  }
+
+  &__row {
+    display: flex;
+
+    @include respond(mobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__label {
+    font-size: 1.8rem;
+    color: $color-primary-black;
+    align-self: flex-start;
+    padding-top: 0.75rem;
+    position: relative;
+
+    @include respond(mobile) {
+      margin-bottom: 8px;
+    }
+
+    &.error::after {
+      content: "This field is incomplete";
+      top: 105%;
+      left: 0;
+      width: 200%;
+    }
+  }
+
+  &__group {
+    display: flex;
+    margin-left: auto;
+
+    @include respond(mobile) {
+      justify-content: space-between;
+      margin-left: 0;
+    }
+  }
+
+  &__row &__input-container:not(:last-child) {
+    margin-right: 1.6rem;
+
+    @include respond(mobile) {
+      margin-right: 0;
+    }
+  }
+
+  &__operator-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 3rem 1.7rem;
+  }
+
+  &__operator {
+    color: $color-primary;
+    cursor: pointer;
+    transition: opacity 0.4s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__people-count {
+    color: #151515;
+    font-weight: 700;
+  }
+
+  &__btn {
+    border-color: $color-primary-black;
+    padding-left: 0; // removing padding on sides - button's width is adjusted to the flex container
+    padding-right: 0;
+  }
+}

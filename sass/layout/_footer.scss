@@ -8,6 +8,7 @@
 
   @include respond(tablet) {
     padding: 6.4rem $padding-side-tablet-sm;
+    margin-top: -5px;
   }
 
   @include respond(mobile) {

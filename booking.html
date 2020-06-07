@@ -1,48 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <title>Dine - Booking</title>
-  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/5225b7dab1.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <div class="booking-intro">
-    <a href="/">
-      <img src="images/logo.svg" alt="logo" class="logo" />
-    </a>
-    Reservations
+    <title>Dine - Booking</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-    We can’t wait to host you. If you have any special requirements please feel free to
-    call on the phone number below. We’ll be happy to accommodate you.
-  </div>
+    <script
+      src="https://kit.fontawesome.com/5225b7dab1.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="booking-container">
+      <picture>
+        <source
+          srcset="
+            images/booking/hero-bg-tablet.jpg    1x,
+            images/booking/hero-bg-tablet@2x.jpg 2x
+          "
+          media="(max-width: 1200px) and (min-width: 700px)"
+        />
+        <source
+          srcset="
+            images/booking/hero-bg-mobile.jpg    1x,
+            images/booking/hero-bg-mobile@2x.jpg 2x
+          "
+          media="(max-width: 700px)"
+        />
+        <img
+          alt="hero-bg"
+          srcset="
+            images/booking/hero-bg-desktop.jpg    1x,
+            images/booking/hero-bg-desktop@2x.jpg 2x
+          "
+          class="booking-container__bg"
+        />
+      </picture>
 
+      <a href="/">
+        <img
+          src="images/logo.svg"
+          alt="logo"
+          class="logo booking-container__logo"
+        />
+      </a>
 
+      <div class="booking-container__content">
+        <div class="booking-container__intro">
+          <h1 class="heading-1 mb-small">Reservations</h1>
+          <p class="paragraph">
+            We can’t wait to host you. If you have any special requirements
+            please feel free to call on the phone number below. We’ll be happy
+            to accommodate you.
+          </p>
+          <a href="#form" class="btn btn--light booking-container__intro-btn">Reserve Place</a>
+        </div>
 
+        <form class="form" id="form" autocomplete="off">
+          <div
+            class="form__input-container form__input-container--lg"
+            id="name-container"
+          >
+            <input
+              type="text"
+              class="form__input"
+              id="name"
+              placeholder="Name"
+              autocomplete="off"
+            />
+          </div>
+          <div
+            class="form__input-container form__input-container--lg"
+            id="email-container"
+          >
+            <input
+              type="text"
+              class="form__input"
+              id="email"
+              placeholder="Email"
+            />
+          </div>
+          <div class="form__row">
+            <label class="form__label" id="date-label">Pick a date</label>
+            <div class="form__group">
+              <div class="form__input-container form__input-container--sm">
+                <input
+                  type="text"
+                  class="form__input"
+                  id="month"
+                  placeholder="MM"
+                />
+              </div>
+              <div class="form__input-container form__input-container--sm">
+                <input
+                  type="text"
+                  class="form__input"
+                  id="day"
+                  placeholder="DD"
+                />
+              </div>
+              <div class="form__input-container form__input-container--md">
+                <input
+                  type="text"
+                  class="form__input"
+                  id="year"
+                  placeholder="YYYY"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form__row">
+            <label class="form__label" id="time-label">Pick a time</label>
+            <div class="form__group">
+              <div class="form__input-container form__input-container--sm">
+                <input
+                  type="text"
+                  class="form__input"
+                  id="hour"
+                  placeholder="09"
+                />
+              </div>
+              <div class="form__input-container form__input-container--sm">
+                <input
+                  type="text"
+                  class="form__input"
+                  id="minute"
+                  placeholder="00"
+                />
+              </div>
+              <div class="form__input-container form__input-container--md">
+                <select id="period" class="form__input">
+                  <option value="AM">AM</option>
+                  <option value="PM">PM</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form__input-container form__input-container--lg">
+            <div class="form__input form__operator-row">
+              <span
+                class="form__operator paragraph fas fa-minus"
+                id="decrement"
+              ></span>
+              <span
+                class="form__people-count paragraph"
+                id="people-count"
+              ></span>
+              <span
+                class="form__operator paragraph fas fa-plus"
+                id="increment"
+              ></span>
+            </div>
+          </div>
+          <button class="btn btn--dark form__btn" type="submit">
+            Make Reservation
+          </button>
+        </form>
+      </div>
+    </main>
 
-  Name
-  Email
-  Pick a date
-  Pick a time
+    <div class="booking-container__bottom-bg"></div>
 
-  Make Reservation
+    <footer class="footer">
+      <img src="images/logo.svg" alt="logo" class="logo footer__logo" />
+      <div class="footer__container">
+        <div class="footer__column">
+          <p class="footer__text">Marthwaite, Sedbergh</p>
+          <p class="footer__text">Cumbria</p>
+          <p class="footer__text">+00 44 123 4567</p>
+        </div>
+        <div class="footer__column">
+          <p class="footer__text">Open Times</p>
+          <p class="footer__text">Mon - Fri: 09:00 AM - 10:00 PM</p>
+          <p class="footer__text">Sat - Sun: 09:00 AM - 11:30 PM</p>
+        </div>
+      </div>
+    </footer>
 
-
-
-  Marthwaite, Sedbergh
-  Cumbria
-  +00 44 123 4567
-
-  Open Times
-  Mon - Fri: 09:00 AM - 10:00 PM
-  Sat - Sun: 09:00 AM - 11:30 PM
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="index.js"></script>
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+  </body>
 </html>
