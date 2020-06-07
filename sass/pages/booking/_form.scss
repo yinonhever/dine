@@ -78,6 +78,10 @@
       top: 115%;
       left: 1.6rem;
     }
+
+    &#email-container.error.invalid::after {
+      content: "Invalid email";
+    }
   }
 
   &__input {
@@ -148,6 +152,14 @@
       @include respond(mobile) {
         top: 90%;
       }
+    }
+
+    &#date-label.error.invalid::after {
+      content: "Invalid date";
+    }
+
+    &#time-label.error.invalid::after {
+      content: "Invalid time";
     }
   }
 

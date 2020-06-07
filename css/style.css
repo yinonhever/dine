@@ -753,6 +753,8 @@ body {
       content: "This field is required";
       top: 115%;
       left: 1.6rem; }
+    .form__input-container#email-container.error.invalid::after {
+      content: "Invalid email"; }
   .form__input {
     width: 100%;
     height: 100%;
@@ -803,6 +805,10 @@ body {
       @media only screen and (max-width: 700px) {
         .form__label.error::after {
           top: 90%; } }
+    .form__label#date-label.error.invalid::after {
+      content: "Invalid date"; }
+    .form__label#time-label.error.invalid::after {
+      content: "Invalid time"; }
   .form__group {
     display: flex;
     margin-left: auto; }

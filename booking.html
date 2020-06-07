@@ -66,7 +66,9 @@
             please feel free to call on the phone number below. We’ll be happy
             to accommodate you.
           </p>
-          <a href="#form" class="btn btn--light booking-container__intro-btn">Reserve Place</a>
+          <a href="#form" class="btn btn--light booking-container__intro-btn"
+            >Reserve Place</a
+          >
         </div>
 
         <form class="form" id="form" autocomplete="off">
@@ -79,7 +81,7 @@
               class="form__input"
               id="name"
               placeholder="Name"
-              autocomplete="off"
+              aria-label="Name"
             />
           </div>
 
@@ -92,6 +94,7 @@
               class="form__input"
               id="email"
               placeholder="Email"
+              aria-label="Email"
             />
           </div>
 
@@ -104,6 +107,7 @@
                   class="form__input"
                   id="month"
                   placeholder="MM"
+                  aria-label="Month"
                 />
               </div>
 
@@ -113,6 +117,7 @@
                   class="form__input"
                   id="day"
                   placeholder="DD"
+                  aria-label="Day"
                 />
               </div>
 
@@ -122,6 +127,7 @@
                   class="form__input"
                   id="year"
                   placeholder="YYYY"
+                  aria-label="Year"
                 />
               </div>
             </div>
@@ -135,6 +141,7 @@
                   class="form__input"
                   id="hour"
                   placeholder="09"
+                  aria-label="Hour"
                 />
               </div>
 
@@ -144,6 +151,7 @@
                   class="form__input"
                   id="minute"
                   placeholder="00"
+                  aria-label="Minutes"
                 />
               </div>
 
@@ -155,23 +163,16 @@
               </div>
             </div>
           </div>
-          
+
           <div class="form__input-container form__input-container--lg">
-            <div class="form__input form__operator-row">
-              <span
-                class="form__operator paragraph fas fa-minus"
-                id="decrement"
-              ></span>
-              <span
-                class="form__people-count paragraph"
-                id="people-count"
-              ></span>
-              <span
-                class="form__operator paragraph fas fa-plus"
-                id="increment"
-              ></span>
-            </div>
+            <input type="hidden" id="people" aria-label="Number of people" />
+            <label for="people" class="form__input form__operator-row">
+              <span class="form__operator fas fa-minus" id="decrement"></span>
+              <span class="form__people-count" id="people-count"></span>
+              <span class="form__operator fas fa-plus" id="increment"></span>
+            </label>
           </div>
+
           <button class="btn btn--dark form__btn" type="submit">
             Make Reservation
           </button>

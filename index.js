@@ -25,11 +25,13 @@ $(".slider__tab").click(function () {
 // MANAGING THE PEOPLE COUNT OPERATOR
 
 var peopleCount = 4;
+$("#people").val(peopleCount);
 $("#people-count").text(peopleCount + " people");
 
 $("#decrement").click(function () {
     if (peopleCount > 1) {
         peopleCount--;
+        $("#people").val(peopleCount);
     }
 
     if (peopleCount > 1) {
@@ -42,6 +44,7 @@ $("#decrement").click(function () {
 
 $("#increment").click(function () {
     peopleCount++;
+    $("#people").val(peopleCount);
     $("#people-count").text(peopleCount + " people");
 })
 
@@ -51,53 +54,189 @@ $("#increment").click(function () {
 $(".form").on("submit", function (event) {
     event.preventDefault();
 
-    $("#name-container, #email-container, .form__input, .form__label").toggleClass("error");
+    const name = $("#name").val();
+    const nameValid = validateName(name);
+
+    const email = $("#email").val();
+    const emailValid = validateEmail(email);
+
+    const day = $("#day").val();
+    const month = $("#month").val();
+    const year = $("#year").val();
+    const dateValid = validateDate(day, month, year);
+
+    const hour = $("#hour").val();
+    const minute = $("#minute").val();
+    const timeValid = validateTime(hour, minute);
+
+    const formValid = nameValid && emailValid && dateValid && timeValid;
+
+    if (formValid) {
+        $(".form__input").val("");
+    }
 })
 
 
+// CHECKING IF AN INPUT IS NUMERIC
+
+function isNumeric(input) {
+    return (input - 0) == input && input.length > 0;
+}
 
 
+// VALIDATING NAME
+
+function validateName(name) {
+    if (name === "") {
+        $("#name-container, #name").addClass("error");
+        return false;
+    }
+    else {
+        $("#name-container, #name").removeClass("error");
+        return true;
+    }
+}
 
 
+// VALIDATING EMAIL
+
+function isEmail(email) {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
+
+function validateEmail(email) {
+    if (email === "") {
+        $("#email-container, #email").addClass("error").removeClass("invalid");
+        return false;
+    }
+    else {
+        if (isEmail(email)) {
+            $("#email-container, #email").removeClass("error").removeClass("invalid");
+            return true;
+        }
+        else {
+            $("#email-container, #email").addClass("error").addClass("invalid");
+            return false;
+        }
+    }
+}
 
 
+// VALIDATING DATE
+
+function validateDate(day, month, year) {
+    if (day === "" && month === "" && year === "") {
+        $("#date-label").addClass("error").removeClass("invalid");
+        return false;
+    }
+    else {
+        if (!validateDay(day) || !validateMonth(month) || !validateYear(year)) {
+            $("#date-label").addClass("error").addClass("invalid");
+            return false;
+        }
+        else {
+            if (!dayFittingMonth(day, month)) {
+                $("#date-label").addClass("error").addClass("invalid");
+                return false;
+            }
+            else {
+                if (day === "" || month === "" || year === "") {
+                    $("#date-label").addClass("error").removeClass("invalid");
+                    return false;
+                }
+                else {
+                    $("#date-label").removeClass("error").removeClass("invalid");
+                    return true;
+                }
+            }
+        }
+    }
+}
+
+function validateDay(day) {
+    if (day != "" && (!isNumeric(day) || day < 1 || day > 31)) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+function validateMonth(month) {
+    if (month != "" && (!isNumeric(month) || month < 1 || month > 12)) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+function validateYear(year) {
+    const currentYear = new Date().getFullYear();
+
+    if (year != "" && (!isNumeric(year) || year < currentYear)) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+function dayFittingMonth(day, month) {
+    if (day > 28 && month === 2) {
+        return false;
+    }
+    else {
+        if (day > 30 && (month === 4 || month === 6 || month === 9 || month === 11)) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+}
 
 
+// VALIDATING TIME
 
+function validateTime(hour, minute) {
+    if (hour === "" && minute === "") {
+        $("#time-label").addClass("error").removeClass("invalid");
+        return false;
+    }
+    else {
+        if (!validateHour(hour) || !validateMinute(minute)) {
+            $("#time-label").addClass("error").addClass("invalid");
+            return false;
+        }
+        else {
+            if (hour === "" || minute === "") {
+                $("#time-label").addClass("error").removeClass("invalid");
+                return false;
+            }
+            else {
+                $("#time-label").removeClass("error").removeClass("invalid");
+                return true;
+            }
+        }
+    }
+}
 
+function validateHour(hour) {
+    if (hour != "" && (hour < 1 || hour > 12)) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-// ADDING ANIMATIONS
-
-// $(document).ready(function () {
-//     $(".features__row--left").waypoint(function () {
-//         $(this).children(".features__img").css({
-//             animation: "slideRight .7s ease-out",
-//             opacity: "1"
-//         })
-//         $(this).children(".features__content").css({
-//             animation: "slideLeft .7s ease-out",
-//             opacity: "1"
-//         })
-//     }, { offset: "50%" })
-
-//     $(".features__row--right").waypoint(function () {
-//         $(this).children(".features__img").css({
-//             animation: "slideLeft .7s ease-out",
-//             opacity: "1"
-//         })
-//         $(this).children(".features__content").css({
-//             animation: "slideRight .7s ease-out",
-//             opacity: "1"
-//         })
-//     }, { offset: "50%" })
-// })
+function validateMinute(minute) {
+    if (minute != "" && (minute < 0 || minute > 59)) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
