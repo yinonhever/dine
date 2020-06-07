@@ -789,12 +789,15 @@ body {
     position: relative; }
     @media only screen and (max-width: 700px) {
       .form__label {
-        margin-bottom: 8px; } }
+        margin-bottom: 1rem; } }
     .form__label.error::after {
       content: "This field is incomplete";
       top: 105%;
       left: 0;
       width: 200%; }
+      @media only screen and (max-width: 700px) {
+        .form__label.error::after {
+          top: 90%; } }
   .form__group {
     display: flex;
     margin-left: auto; }
@@ -815,6 +818,7 @@ body {
   .form__operator {
     color: #9e7f66;
     cursor: pointer;
+    padding: 1rem 0;
     transition: opacity 0.4s; }
     .form__operator:hover {
       opacity: 0.5; }

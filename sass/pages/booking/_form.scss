@@ -132,7 +132,7 @@
     position: relative;
 
     @include respond(mobile) {
-      margin-bottom: 8px;
+      margin-bottom: 1rem;
     }
 
     &.error::after {
@@ -140,6 +140,10 @@
       top: 105%;
       left: 0;
       width: 200%;
+
+      @include respond(mobile) {
+        top: 90%;
+      }
     }
   }
 
@@ -171,6 +175,7 @@
   &__operator {
     color: $color-primary;
     cursor: pointer;
+    padding: 1rem 0;
     transition: opacity 0.4s;
 
     &:hover {
