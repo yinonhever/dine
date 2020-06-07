@@ -763,6 +763,9 @@ body {
     color: inherit;
     font-family: inherit;
     outline: none; }
+    @media only screen and (max-width: 700px) {
+      .form__input {
+        padding-left: 1.45rem; } }
     @media only screen and (max-width: 350px) {
       .form__input {
         padding-left: 8px; } }

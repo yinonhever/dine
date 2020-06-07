@@ -91,6 +91,10 @@
     font-family: inherit;
     outline: none;
 
+    @include respond(mobile) {
+      padding-left: 1.45rem;
+    }
+
     @media only screen and (max-width: 350px) {
       padding-left: 8px;
     }
