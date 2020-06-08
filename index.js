@@ -22,22 +22,22 @@ $(".slider__tab").click(function () {
 });
 
 
-// MANAGING THE PERIOD SELECTOR
+// MANAGING THE DROPDOWN SELECTOR
 
-$(".form__select").on("click", function() {
+$(".form__select").on("click", function () {
     $(this).toggleClass("open");
 })
 
-$(".form__option").on("click", function() {
+$(".form__option").on("click", function () {
     $(".form__option").removeClass("selected");
     $(this).addClass("selected");
     const selected = $(this).text();
-    $("#period-trigger span").text(selected);
-    $("#period").val(selected);
+    $(this).parent().siblings(".form__select-trigger").children("span").text(selected);
+    $(this).parent().siblings(".form__select-input").val(selected);
 })
 
 
-// MANAGING THE PEOPLE COUNT OPERATOR
+// MANAGING THE PEOPLE COUNT SELECTOR
 
 var peopleCount = 4;
 $("#people").val(peopleCount);
@@ -87,7 +87,7 @@ $(".form").on("submit", function (event) {
     const formValid = nameValid && emailValid && dateValid && timeValid;
 
     if (formValid) {
-        $(".form__input:not(#period)").val("");
+        $(".form__input").val("");
     }
 })
 
@@ -151,19 +151,13 @@ function validateDate(day, month, year) {
             return false;
         }
         else {
-            if (!dayFittingMonth(day, month)) {
-                $("#date-label, #day, #month, #year").addClass("error").addClass("invalid");
+            if (day === "" || month === "" || year === "") {
+                $("#date-label, #day, #month, #year").addClass("error").removeClass("invalid");
                 return false;
             }
             else {
-                if (day === "" || month === "" || year === "") {     
-                    $("#date-label, #day, #month, #year").addClass("error").removeClass("invalid");
-                    return false;
-                }
-                else {
-                    $("#date-label, #day, #month, #year").removeClass("error").removeClass("invalid");
-                    return true;
-                }
+                $("#date-label, #day, #month, #year").removeClass("error").removeClass("invalid");
+                return true;
             }
         }
     }
@@ -195,20 +189,6 @@ function validateYear(year) {
     }
     else {
         return true;
-    }
-}
-
-function dayFittingMonth(day, month) {
-    if (day > 28 && month === 2) {
-        return false;
-    }
-    else {
-        if (day > 30 && (month === 4 || month === 6 || month === 9 || month === 11)) {
-            return false;
-        }
-        else {
-            return true;
-        }
     }
 }
 

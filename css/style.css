@@ -102,19 +102,16 @@ body {
   transition: all 0.6s;
   cursor: pointer;
   outline: none;
-  font-family: "Spartan", sans-serif;
-  font-weight: 600; }
+  font-family: "Spartan", sans-serif; }
+  .btn:hover {
+    background-color: #fff;
+    color: #111; }
   .btn--dark {
     background-color: #111; }
     .btn--dark:hover {
-      background-color: #fff;
-      color: #111;
       border-color: #111; }
   .btn--light {
     background-color: transparent; }
-    .btn--light:hover {
-      background-color: #fff;
-      color: #111; }
 
 .picture {
   width: 37.5vw;
@@ -728,7 +725,7 @@ body {
     @media only screen and (max-width: 1200px) {
       .form::after {
         display: none; } }
-  .form .error::after {
+  .form *.error::after {
     position: absolute;
     font-size: 1rem;
     letter-spacing: -0.13px;
@@ -824,8 +821,6 @@ body {
       .form__row .form__input-container:not(:last-child) {
         margin-right: 0; } }
   .form__select {
-    display: flex;
-    flex-direction: column;
     height: auto;
     cursor: pointer;
     color: #111;
@@ -835,8 +830,14 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-right: 1.6rem;
-    height: 4.5rem;
-    position: relative; }
+    height: 4.5rem; }
+    @media only screen and (max-width: 700px) {
+      .form__select-trigger {
+        padding-left: 1.45rem; } }
+    @media only screen and (max-width: 350px) {
+      .form__select-trigger {
+        padding-right: 8px;
+        padding-left: 8px; } }
   .form__arrow {
     transition: all .5s; }
   .form__select-trigger:hover .form__arrow {
@@ -873,8 +874,7 @@ body {
       opacity: 0.5; }
   .form__check {
     visibility: hidden;
-    opacity: 0;
-    transition: .2s; }
+    opacity: 0; }
   .form__option.selected .form__check {
     visibility: visible;
     opacity: 1; }
@@ -889,7 +889,7 @@ body {
     transition: opacity 0.4s; }
     .form__operator:hover {
       opacity: 0.5; }
-  .form__people-count {
+  .form__count {
     color: #151515;
     font-weight: 700; }
   .form__btn {

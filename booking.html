@@ -155,18 +155,20 @@
                 />
               </div>
 
-              <div class="form__select-wrapper form__input-container form__input-container--md">
-                <input
-                  type="hidden"
-                  class="form__select-input"
-                  id="period"
-                  aria-label="Period"
-                />
-                <div
-                  class="form__select"
-                  id="period-select"
-                >
-                  <div class="form__input form__select-trigger" id="period-trigger">
+              <div
+                class="form__select-wrapper form__input-container form__input-container--md"
+              >
+                <div class="form__select" id="period-select">
+                  <input
+                    type="hidden"
+                    class="form__select-input"
+                    id="period"
+                    aria-label="Period"
+                  />
+                  <div
+                    class="form__input form__select-trigger"
+                    id="period-trigger"
+                  >
                     <span>AM</span>
                     <img
                       class="form__arrow"
@@ -201,7 +203,7 @@
             <input type="hidden" id="people" aria-label="Number of people" />
             <label for="people" class="form__input form__operator-row">
               <span class="form__operator fas fa-minus" id="decrement"></span>
-              <span class="form__people-count" id="people-count"></span>
+              <span class="form__count" id="people-count"></span>
               <span class="form__operator fas fa-plus" id="increment"></span>
             </label>
           </div>

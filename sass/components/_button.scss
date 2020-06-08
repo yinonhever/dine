@@ -13,24 +13,21 @@
   cursor: pointer;
   outline: none;
   font-family: "Spartan", sans-serif;
-  font-weight: 600;
+
+  &:hover {
+    background-color: #fff;
+    color: $color-primary-black;
+  }
 
   &--dark {
     background-color: $color-primary-black;
 
     &:hover {
-      background-color: #fff;
-      color: $color-primary-black;
       border-color: $color-primary-black;
     }
   }
 
   &--light {
     background-color: transparent;
-
-    &:hover {
-      background-color: #fff;
-      color: $color-primary-black;
-    }
   }
 }

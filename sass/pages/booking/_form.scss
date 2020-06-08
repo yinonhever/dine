@@ -41,7 +41,7 @@
     }
   }
 
-  & .error::after {
+  & *.error::after {
     position: absolute;
     font-size: 1rem;
     letter-spacing: -0.13px;
@@ -184,8 +184,6 @@
   }
 
   &__select {
-    display: flex;
-    flex-direction: column;
     height: auto;
     cursor: pointer;
     color: $color-primary-black;
@@ -198,14 +196,13 @@
     align-items: center;
     padding-right: 1.6rem;
     height: 4.5rem;
-    position: relative;
 
     @include respond(mobile) {
       padding-left: 1.45rem;
-      padding-right: 8px;
     }
 
     @media only screen and (max-width: 350px) {
+      padding-right: 8px;
       padding-left: 8px;
     }
   }
@@ -265,7 +262,6 @@
   &__check {
     visibility: hidden;
     opacity: 0;
-    transition: .2s;
   }
 
   &__option.selected &__check {
@@ -290,7 +286,7 @@
     }
   }
 
-  &__people-count {
+  &__count {
     color: #151515;
     font-weight: 700;
   }
