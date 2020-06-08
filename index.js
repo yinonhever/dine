@@ -88,7 +88,15 @@ $(".form").on("submit", function (event) {
 
     if (formValid) {
         $(".form__input").val("");
+        $(".success").addClass("active");
     }
+})
+
+
+// CLOSING THE SUCCESS MESSAGE
+
+$(".success__close").on("click", function() {
+    $(this).parent().parent().removeClass("active");
 })
 
 
