@@ -690,55 +690,6 @@ body {
     .booking-container__bottom-bg {
       height: 20rem; } }
 
-.success {
-  visibility: hidden;
-  opacity: 0;
-  background-color: rgba(17, 17, 17, 0.8);
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 6.4vw;
-  z-index: 9999;
-  transition: all 0.3s; }
-  .success.active {
-    visibility: visible;
-    opacity: 1; }
-  .success__content {
-    position: absolute;
-    top: 50vh;
-    left: 50vw;
-    width: 90%;
-    max-width: 40rem;
-    height: 20rem;
-    background-color: #fff;
-    box-shadow: 0 1.5rem 2.5rem 0 rgba(56, 66, 85, 0.25);
-    font-size: 1.8rem;
-    transform: translate(-50%, 80%);
-    opacity: 0;
-    transition: all 0.5s 0.2s; }
-  .success.active .success__content {
-    opacity: 1;
-    transform: translate(-50%, -50%); }
-  .success__close {
-    position: absolute;
-    top: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #9e7f66;
-    cursor: pointer;
-    transition: opacity 0.25s; }
-    .success__close:hover {
-      opacity: 0.5; }
-  .success__text {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    top: 50%;
-    font-weight: 700;
-    transform: translateY(-50%); }
-
 .form {
   background-color: #fff;
   width: 37.5vw;
@@ -945,3 +896,52 @@ body {
     border-color: #111;
     padding-left: 0;
     padding-right: 0; }
+
+.success {
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgba(17, 17, 17, 0.8);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 6.4vw;
+  z-index: 9999;
+  transition: all 0.3s; }
+  .success.active {
+    visibility: visible;
+    opacity: 1; }
+  .success__content {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    width: 90%;
+    max-width: 40rem;
+    height: 20rem;
+    background-color: #fff;
+    box-shadow: 0 1.5rem 2.5rem 0 rgba(56, 66, 85, 0.25);
+    font-size: 1.8rem;
+    transform: translate(-50%, 80%);
+    opacity: 0;
+    transition: all 0.5s 0.2s; }
+  .success.active .success__content {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+  .success__close {
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #9e7f66;
+    cursor: pointer;
+    transition: opacity 0.25s; }
+    .success__close:hover {
+      opacity: 0.5; }
+  .success__text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    font-weight: 700;
+    transform: translateY(-50%); }

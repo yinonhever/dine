@@ -89,6 +89,7 @@ $(".form").on("submit", function (event) {
     if (formValid) {
         $(".form__input").val("");
         $(".success").addClass("active");
+        console.log($(this));
     }
 })
 
@@ -110,12 +111,14 @@ function isNumeric(input) {
 // VALIDATING NAME
 
 function validateName(name) {
+    const nameField = $("#name-container, #name");
+
     if (name === "") {
-        $("#name-container, #name").addClass("error");
+        nameField.addClass("error");
         return false;
     }
     else {
-        $("#name-container, #name").removeClass("error");
+        nameField.removeClass("error");
         return true;
     }
 }
@@ -129,17 +132,19 @@ function isEmail(email) {
 }
 
 function validateEmail(email) {
+    const emailField = $("#email-container, #email");
+
     if (email === "") {
-        $("#email-container, #email").addClass("error").removeClass("invalid");
+        emailField.addClass("error").removeClass("invalid");
         return false;
     }
     else {
         if (isEmail(email)) {
-            $("#email-container, #email").removeClass("error").removeClass("invalid");
+            emailField.removeClass("error").removeClass("invalid");
             return true;
         }
         else {
-            $("#email-container, #email").addClass("error").addClass("invalid");
+            emailField.addClass("error").addClass("invalid");
             return false;
         }
     }
@@ -149,22 +154,24 @@ function validateEmail(email) {
 // VALIDATING DATE
 
 function validateDate(day, month, year) {
+    const dateField = $("#date-label, #day, #month, #year");
+
     if (day === "" && month === "" && year === "") {
-        $("#date-label, #day, #month, #year").addClass("error").removeClass("invalid");
+        dateField.addClass("error").removeClass("invalid");
         return false;
     }
     else {
         if (!validateDay(day) || !validateMonth(month) || !validateYear(year)) {
-            $("#date-label, #day, #month, #year").addClass("error").addClass("invalid");
+            dateField.addClass("error").addClass("invalid");
             return false;
         }
         else {
             if (day === "" || month === "" || year === "") {
-                $("#date-label, #day, #month, #year").addClass("error").removeClass("invalid");
+                dateField.addClass("error").removeClass("invalid");
                 return false;
             }
             else {
-                $("#date-label, #day, #month, #year").removeClass("error").removeClass("invalid");
+                dateField.removeClass("error").removeClass("invalid");
                 return true;
             }
         }
@@ -204,22 +211,24 @@ function validateYear(year) {
 // VALIDATING TIME
 
 function validateTime(hour, minute) {
+    const timeField = $("#time-label, #hour, #minute");
+    
     if (hour === "" && minute === "") {
-        $("#time-label, #hour, #minute").addClass("error").removeClass("invalid");
+        timeField.addClass("error").removeClass("invalid");
         return false;
     }
     else {
         if (!validateHour(hour) || !validateMinute(minute)) {
-            $("#time-label, #hour, #minute").addClass("error").addClass("invalid");
+            timeField.addClass("error").addClass("invalid");
             return false;
         }
         else {
             if (hour === "" || minute === "") {
-                $("#time-label, #hour, #minute").addClass("error").removeClass("invalid");
+                timeField.addClass("error").removeClass("invalid");
                 return false;
             }
             else {
-                $("#time-label, #hour, #minute").removeClass("error").removeClass("invalid");
+                timeField.removeClass("error").removeClass("invalid");
                 return true;
             }
         }
