@@ -69,34 +69,22 @@ $("#increment").click(function () {
 $(".form").on("submit", function (event) {
     event.preventDefault();
 
-    const name = $("#name").val();
-    const nameValid = validateName(name);
-
-    const email = $("#email").val();
-    const emailValid = validateEmail(email);
-
-    const day = $("#day").val();
-    const month = $("#month").val();
-    const year = $("#year").val();
-    const dateValid = validateDate(day, month, year);
-
-    const hour = $("#hour").val();
-    const minute = $("#minute").val();
-    const timeValid = validateTime(hour, minute);
+    const nameValid = validateName($("#name").val());
+    const emailValid = validateEmail($("#email").val());
+    const dateValid = validateDate($("#day").val(), $("#month").val(), $("#year").val());
+    const timeValid = validateTime($("#hour").val(), $("#minute").val(), $("#day").val(), $("#month").val(), $("#year").val());
 
     const formValid = nameValid && emailValid && dateValid && timeValid;
 
     if (formValid) {
-        $(".form__input").val("");
+        event.target.reset();
         $(".success").addClass("active");
-        console.log($(this));
     }
 })
 
-
 // CLOSING THE SUCCESS MESSAGE
 
-$(".success__close").on("click", function() {
+$(".success__close").on("click", function () {
     $(this).parent().parent().removeClass("active");
 })
 
@@ -150,87 +138,67 @@ function validateEmail(email) {
     }
 }
 
-
 // VALIDATING DATE
+
+function daysInMonth(month, year) {
+    switch (month) {
+        case 1:
+            return (year % 4 === 0 && year % 100) || year % 400 === 0 ? 29 : 28;
+        case 8: case 3: case 5: case 10:
+            return 30;
+        default:
+            return 31
+    }
+}
+
+function isValidDate(day, month, year) {
+    month = parseInt(month, 10) - 1;
+    return month >= 0 && month < 12 && day > 0 && day <= daysInMonth(month, year);
+}
 
 function validateDate(day, month, year) {
     const dateField = $("#date-label, #day, #month, #year");
+    const dateValid = isValidDate(day, month, year);
 
-    if (day === "" && month === "" && year === "") {
+    const inputDate = new Date(moment(new Date(year, month - 1, day)).format("LL"));
+    const currentDate = new Date(moment(new Date()).format("LL"));
+    const datePassed = inputDate.getTime() < currentDate.getTime();
+
+    if (day === "" || month === "" || year === "") {
         dateField.addClass("error").removeClass("invalid");
         return false;
     }
     else {
-        if (!validateDay(day) || !validateMonth(month) || !validateYear(year)) {
+        if (!dateValid || datePassed) {
             dateField.addClass("error").addClass("invalid");
             return false;
         }
         else {
-            if (day === "" || month === "" || year === "") {
-                dateField.addClass("error").removeClass("invalid");
-                return false;
-            }
-            else {
-                dateField.removeClass("error").removeClass("invalid");
-                return true;
-            }
+            dateField.removeClass("error").removeClass("invalid");
+            return true;
         }
     }
 }
 
-function validateDay(day) {
-    if (day != "" && (!isNumeric(day) || day < 1 || day > 31)) {
-        return false;
-    }
-    else {
-        return true;
-    }
-}
-
-function validateMonth(month) {
-    if (month != "" && (!isNumeric(month) || month < 1 || month > 12)) {
-        return false;
-    }
-    else {
-        return true;
-    }
-}
-
-function validateYear(year) {
-    const currentYear = new Date().getFullYear();
-
-    if (year != "" && (!isNumeric(year) || year < currentYear)) {
-        return false;
-    }
-    else {
-        return true;
-    }
-}
-
-
 // VALIDATING TIME
 
-function validateTime(hour, minute) {
+function validateTime(hour, minute, day, month, year) {
     const timeField = $("#time-label, #hour, #minute");
-    
-    if (hour === "" && minute === "") {
+    const timeValid = validateHour(hour) && validateMinute(minute);
+    const timePassed = new Date(year, month - 1, day, hour, minute).getTime() <= Date.now();
+
+    if (hour === "" || minute === "") {
         timeField.addClass("error").removeClass("invalid");
         return false;
     }
     else {
-        if (!validateHour(hour) || !validateMinute(minute)) {
+        if (!timeValid || timePassed) {
             timeField.addClass("error").addClass("invalid");
             return false;
         }
         else {
-            if (hour === "" || minute === "") {
-                timeField.addClass("error").removeClass("invalid");
-                return false;
-            }
-            else {
-                timeField.removeClass("error").removeClass("invalid");
-                return true;
-            }
+            timeField.removeClass("error").removeClass("invalid");
+            return true;
         }
     }
 }

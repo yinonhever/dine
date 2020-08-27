@@ -2,10 +2,10 @@
 .slider {
   padding: 15rem $padding-side-desktop;
   position: relative;
+  overflow: hidden;
 
   @include respond(tablet) {
     padding: 11rem $padding-side-tablet-sm;
-    overflow: hidden;
   }
 
   @include respond(mobile) {
@@ -78,7 +78,7 @@
     width: 31vw;
     margin-left: 8.5vw;
     margin-bottom: 6.5rem;
-    animation: slideLeft 0.7s ease-out;
+    animation: slideLeft 0.6s ease-out;
 
     &.active {
       display: block;
@@ -105,7 +105,7 @@
 
   &__img {
     display: none;
-    animation: slideRight 0.7s ease-out;
+    animation: slideRight 0.6s ease-out;
 
     &.active {
       display: block;
